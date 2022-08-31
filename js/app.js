@@ -39,6 +39,14 @@ searchField.addEventListener('keyup', async(event) => {
 
         const productContainer = document.getElementById('products');
         productContainer.innerHTML = ``;
+        // validation check if no products found
+        const notFoundMessage = document.getElementById('not-found');
+        if (foundProducts.length === 0) {
+            notFoundMessage.classList.remove('hidden');
+        } else {
+            notFoundMessage.classList.add('hidden');
+        }
+        
         foundProducts.forEach(product => {
             console.log(product);
 
