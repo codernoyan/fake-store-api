@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake Store API</title>
+    <!-- tailwind css and daisy ui link -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.24.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- tailwind config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                    },
+                },
+            },
+            plugins: [
+                daisyui: {
+                    themes: ["light", "dark", "cupcake"],
+                },
+            ],
+        }
+    </script>
+</head>
+
+<body>
+    <header class="my-4 flex justify-center">
+        <div class="space-y-2">
+            Press <kbd class="kbd kbd-sm">Enter</kbd> to Search
+            <input id="search-field" type="text" placeholder="Search Products Here"
+                class="input input-bordered input-accent w-full max-w-xs">
+        </div>
+    </header>
+    <progress id="spinner" class="progress w-full hidden"></progress>
+    <main class="container mx-auto my-4">
+        <section class="grid grid-cols-6">
+            <div class="p-3">
+                <h1 class="text-xl font-bold">Menu:</h1>
+                <ul id="products-menu" class="border-2 menu bg-base-100 w-full">
+                    
+                  </ul>
+            </div>
+            <div class="col-span-5">
+                <div id="products" class="grid grid-cols-4 gap-4">
+
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
